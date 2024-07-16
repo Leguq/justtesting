@@ -1,0 +1,11 @@
+echo Starting the process...
+cd C:\Users\Jakub\Documents
+mkdir NewFolder
+cd NewFolder
+echo Creating a sample text file > sample.txt
+type sample.txt
+del sample.txt
+copy NUL sample.txt
+echo File created successfully!
+dir
+pause
