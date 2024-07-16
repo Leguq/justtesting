@@ -1,0 +1,83 @@
+@echo off
+echo Starting the process...
+cd C:\Users\Jakub\Documents
+mkdir NewFolder
+cd NewFolder
+echo This is a text file > sample.txt
+type sample.txt
+del sample.txt
+copy NUL sample.txt
+echo File created successfully!
+dir
+echo Creating a second text file...
+echo Another example of a text file > second.txt
+type second.txt
+del second.txt
+echo Writing more data >> sample.txt
+echo More data added to sample.txt >> sample.txt
+type sample.txt
+echo Listing current directory contents...
+dir /B
+echo Creating a backup of sample.txt...
+copy sample.txt sample_backup.txt
+echo Backup created.
+del sample.txt
+echo Recreating sample.txt from backup...
+copy sample_backup.txt sample.txt
+type sample.txt
+echo Done with file operations.
+echo Creating a third text file...
+echo Third example > third.txt
+type third.txt
+del third.txt
+echo Checking disk space...
+dir C:\
+echo Disk space check complete.
+echo Displaying environment variables...
+set
+echo Environment variables displayed.
+echo Creating a log file...
+echo Log file created at %date% %time% > log.txt
+type log.txt
+del log.txt
+echo Clearing the screen...
+cls
+echo Screen cleared.
+echo Running a ping test...
+ping google.com -n 4
+echo Ping test complete.
+echo Checking for active network connections...
+netstat
+echo Network check complete.
+echo Displaying IP configuration...
+ipconfig
+echo IP configuration displayed.
+echo Creating a random folder structure...
+mkdir C:\Users\Jakub\Documents\Random\Folder\Structure
+echo Random folder structure created.
+echo Listing all folders...
+dir /AD
+echo Folder listing complete.
+echo Deleting random folder structure...
+rmdir /S /Q C:\Users\Jakub\Documents\Random
+echo Random folder structure deleted.
+echo Creating a text file with the current date...
+echo Today's date is %date% > date.txt
+type date.txt
+del date.txt
+echo Date file created and deleted.
+cd C:\Users\%USERNAME%\Desktop
+setlocal
+
+set "folder=dontneed"
+
+for %%f in ("%folder%\*") do (
+    echo File: %%f
+del %%f
+)
+
+endlocal
+pause
+
+echo All operations complete.
+pause
