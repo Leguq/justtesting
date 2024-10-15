@@ -11,4 +11,4 @@ for /L %%j in (1,1,100000) do (
 )
 
 endlocal
-
+exit
